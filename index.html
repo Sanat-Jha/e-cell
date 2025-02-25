@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Cell IIT Roorkee | Events</title>
+    <title>E-Cell IIT Roorkee</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,11 +43,11 @@
                     Events
                     <span class="nav-underline"></span>
                 </a>
-                <a href="#" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">
+                <a href="#team" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">
                     Team
                     <span class="nav-underline"></span>
                 </a>
-                <a href="#" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">
+                <a href="#sponsors" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">
                     Sponsors
                     <span class="nav-underline"></span>
                 </a>
@@ -78,8 +78,8 @@
             <div class="flex flex-col space-y-4">
                 <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Home</a>
                 <a href="#events" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Events</a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Team</a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Sponsors</a>
+                <a href="#team" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Team</a>
+                <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Sponsors</a>
                 <a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Blog</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform block p-2 hover:bg-blue-800/20 rounded-lg">Contact</a>
                 <a href="#" class="btn-e-cell bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-full font-medium text-center transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-blue-500/30 mt-2">Join Us</a>
@@ -121,316 +121,557 @@
             </a>
         </div>
     </header>
-    
-    <section id="events" class="py-20 relative">
-        <div class="container mx-auto px-4">
+    <section id="events" class="py-24 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-e-cell-blue opacity-10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 opacity-10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+        
+        <div class="container mx-auto px-4 relative">
             <div class="text-center mb-16">
-                <h6 class="text-e-cell-blue font-medium mb-2 fade-in">WHAT'S HAPPENING</h6>
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 fade-in">Upcoming Events</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto fade-in">
+                <h6 class="text-e-cell-blue font-medium mb-3">WHAT'S HAPPENING</h6>
+                <h2 class="text-3xl md:text-5xl font-bold mb-5">Upcoming Events</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     Discover our lineup of exciting entrepreneurial events designed to inspire and equip you with the tools you need to succeed.
                 </p>
             </div>
             
+            <div class="flex justify-end mb-6">
+                <div class="flex space-x-2 overflow-x-auto py-2">
+                    <button class="event-filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-e-cell-blue text-white transition-all hover:shadow-lg hover:shadow-blue-500/20">All Events</button>
+                    <button class="event-filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-750 transition-all">Workshops</button>
+                    <button class="event-filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-750 transition-all">Talks</button>
+                    <button class="event-filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-750 transition-all">Conferences</button>
+                </div>
+            </div>
+           
             <div id="events-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800 h-96">
-                    <div class="h-48 bg-gray-700"></div>
+                <!-- Loading skeletons will be replaced by actual content -->
+                <div class="event-skeleton animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800/60 backdrop-blur-sm h-96 border border-gray-700">
+                    <div class="h-48 bg-gray-700/60"></div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
-                        <div class="h-8 bg-gray-700 rounded w-full mb-4"></div>
-                        <div class="h-4 bg-gray-700 rounded w-full mb-2"></div>
-                        <div class="h-4 bg-gray-700 rounded w-2/3 mb-6"></div>
-                        <div class="h-10 bg-gray-700 rounded w-full mt-auto"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-3/4 mb-4"></div>
+                        <div class="h-8 bg-gray-700/60 rounded w-full mb-4"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-full mb-2"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-2/3 mb-6"></div>
+                        <div class="h-10 bg-gray-700/60 rounded w-full mt-auto"></div>
                     </div>
                 </div>
-                <div class="animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800 h-96">
-                    <div class="h-48 bg-gray-700"></div>
+                <div class="event-skeleton animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800/60 backdrop-blur-sm h-96 border border-gray-700">
+                    <div class="h-48 bg-gray-700/60"></div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
-                        <div class="h-8 bg-gray-700 rounded w-full mb-4"></div>
-                        <div class="h-4 bg-gray-700 rounded w-full mb-2"></div>
-                        <div class="h-4 bg-gray-700 rounded w-2/3 mb-6"></div>
-                        <div class="h-10 bg-gray-700 rounded w-full mt-auto"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-3/4 mb-4"></div>
+                        <div class="h-8 bg-gray-700/60 rounded w-full mb-4"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-full mb-2"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-2/3 mb-6"></div>
+                        <div class="h-10 bg-gray-700/60 rounded w-full mt-auto"></div>
                     </div>
                 </div>
-                <div class="animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800 h-96">
-                    <div class="h-48 bg-gray-700"></div>
+                <div class="event-skeleton animate-pulse flex flex-col rounded-xl overflow-hidden bg-gray-800/60 backdrop-blur-sm h-96 border border-gray-700">
+                    <div class="h-48 bg-gray-700/60"></div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
-                        <div class="h-8 bg-gray-700 rounded w-full mb-4"></div>
-                        <div class="h-4 bg-gray-700 rounded w-full mb-2"></div>
-                        <div class="h-4 bg-gray-700 rounded w-2/3 mb-6"></div>
-                        <div class="h-10 bg-gray-700 rounded w-full mt-auto"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-3/4 mb-4"></div>
+                        <div class="h-8 bg-gray-700/60 rounded w-full mb-4"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-full mb-2"></div>
+                        <div class="h-4 bg-gray-700/60 rounded w-2/3 mb-6"></div>
+                        <div class="h-10 bg-gray-700/60 rounded w-full mt-auto"></div>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-6 py-3 bg-gradient-to-r from-e-cell-blue to-blue-600 rounded-full font-medium text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1">
+                    View All Events
+                </button>
+            </div>
         </div>
     </section>
+<!-- Team Section -->
+<section id="team" class="py-24 bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+    <!-- Background Animation -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-96 h-96 rounded-full bg-emerald-400 blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div class="absolute w-96 h-96 rounded-full bg-indigo-500 blur-3xl -bottom-48 -right-48 animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
+            <span class="text-emerald-400 font-medium mb-3 inline-block py-1 px-3 rounded-full bg-emerald-400 bg-opacity-10 tracking-wider text-sm">OUR LEADERSHIP</span>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-300 to-indigo-300">Meet the Team</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                Passionate individuals driving E-Cell IIT Roorkee towards fostering innovation and entrepreneurship.
+            </p>
+        </div>
 
-        <section id="team" class="py-20 bg-gradient-to-b from-gray-900 to-black">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h6 class="text-e-cell-blue font-medium mb-2 fade-in">OUR LEADERSHIP</h6>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4 fade-in">Meet the Team</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto fade-in">
-                        Passionate individuals driving E-Cell IIT Roorkee towards fostering innovation and entrepreneurship.
-                    </p>
-                </div>
-    
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Team Member 1 -->
-                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 fade-in">
-                        <img class="w-full h-60 object-cover object-center" src="https://images.unsplash.com/photo-1534528741702-a0cfae562c9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="John Doe">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">John Doe</h3>
-                            <p class="text-gray-400 mb-4">President</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+            <!-- Team Member 1 -->
+            <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:shadow-emerald-500/20 relative border border-slate-700">
+                    <div class="h-72 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        <img class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Alex Thompson">
                     </div>
-    
-                    <!-- Team Member 2 -->
-                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 fade-in">
-                        <img class="w-full h-60 object-cover object-center" src="https://images.unsplash.com/photo-1599566150163-29194dca99eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Jane Smith">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Jane Smith</h3>
-                            <p class="text-gray-400 mb-4">Vice President</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                            </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-10 right-8 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
                         </div>
-                    </div>
-    
-                    <!-- Team Member 3 -->
-                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 fade-in">
-                        <img class="w-full h-60 object-cover object-center" src="https://images.unsplash.com/photo-1580489848864-cca407034298?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" alt="Mike Johnson">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Mike Johnson</h3>
-                            <p class="text-gray-400 mb-4">Secretary</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Team Member 4 -->
-                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 fade-in">
-                        <img class="w-full h-60 object-cover object-center" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Emily Brown">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Emily Brown</h3>
-                            <p class="text-gray-400 mb-4">Treasurer</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                            </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Alex Thompson</h3>
+                        <p class="text-indigo-300 mb-6 text-lg">President</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="far fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    
-        <!-- Sponsors Section -->
-        <section id="sponsors" class="py-20 bg-gradient-to-t from-gray-900 to-black">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h6 class="text-e-cell-blue font-medium mb-2 fade-in">OUR VALUED PARTNERS</h6>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4 fade-in">Our Sponsors</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto fade-in">
-                        We extend our heartfelt gratitude to our sponsors for their unwavering support and commitment to E-Cell IIT Roorkee.
-                    </p>
-                </div>
-    
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-                    <!-- Sponsor 1 -->
-                    <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon" class=" grayscale hover:grayscale-0 transition-all duration-300">
+
+            <!-- Team Member 2 -->
+            <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:shadow-emerald-500/20 relative border border-slate-700">
+                    <div class="h-72 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        <img class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110" src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Sophia Chen">
                     </div>
-    
-                    <!-- Sponsor 2 -->
-                    <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" alt="Google" class=" grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-    
-                    <!-- Sponsor 3 -->
-                    <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" alt="Facebook" class=" grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-    
-                    <!-- Sponsor 4 -->
-                    <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="YouTube" class=" grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-    
-                    <!-- Sponsor 5 -->
-                    <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" class=" grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                     <!-- Sponsor 6 -->
-                     <div class="fade-in transform hover:scale-110 transition-transform duration-300">
-                        <img src="https://www.microsoft.com/ms ফ্লাই/en-us/CMSImages/Microsoft_logo_rgb_C-Gray.png?version=e5532b9a-9efc-1f53-9c87-461751954d38" alt="Microsoft" class=" grayscale hover:grayscale-0 transition-all duration-300">
+                    <div class="p-8 relative">
+                        <div class="absolute -top-10 right-8 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Sophia Chen</h3>
+                        <p class="text-indigo-300 mb-6 text-lg">Vice President</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    
-    
-    <!-- Newsletter Section -->
-    <section id = "blog" class="py-20 bg-gradient-to-b from-transparent to-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="bg-gray-800 rounded-2xl p-8 md:p-12 relative overflow-hidden fade-in">
-                <div class="absolute top-0 left-0 w-full h-full">
-                    <div class="w-64 h-64 rounded-full bg-e-cell-blue opacity-10 absolute -top-20 -right-20 blur-3xl"></div>
+
+            <!-- Team Member 3 -->
+            <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:shadow-emerald-500/20 relative border border-slate-700">
+                    <div class="h-72 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        <img class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110" src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg  " alt="Raj Patel">
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-10 right-8 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Raj Patel</h3>
+                        <p class="text-indigo-300 mb-6 text-lg">Secretary</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="relative z-10 max-w-3xl mx-auto text-center">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Stay Updated with E-Cell</h2>
-                    <p class="text-gray-400 mb-8">
-                        Get notified about upcoming events, workshops, and entrepreneurial opportunities tailored for innovators like you.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-4">
-                        <input type="email" placeholder="Enter your email" class="bg-gray-700 text-white px-6 py-3 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
-                        <button class="btn-e-cell text-white px-8 py-3 rounded-full font-medium whitespace-nowrap w-full sm:w-auto">
-                            Subscribe
-                        </button>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 hover:shadow-emerald-500/20 relative border border-slate-700">
+                    <div class="h-72 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        <img class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110" src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Aisha Kapoor">
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-10 right-8 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Aisha Kapoor</h3>
+                        <p class="text-indigo-300 mb-6 text-lg">Treasurer</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white transform hover:scale-110 transition-all duration-300">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- "View All" Button -->
+        <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+            <a href="#" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transform hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-300 transform translate-y-full group-hover:translate-y-0"></span>
+                <span class="relative flex items-center gap-2">
+                    View All Team Members
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors Section -->
+<section id="sponsors" class="py-24 bg-gradient-to-t from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute w-12 h-12 rounded-full border border-emerald-500/30 top-20 left-1/4 animate-float" style="animation-delay: 0s;"></div>
+        <div class="absolute w-16 h-16 rounded-full border border-indigo-500/30 bottom-32 right-1/3 animate-float" style="animation-delay: 1.5s;"></div>
+        <div class="absolute w-8 h-8 rounded-full border border-emerald-500/30 top-40 right-1/4 animate-float" style="animation-delay: 0.7s;"></div>
+        <div class="absolute w-10 h-10 rounded-full border border-indigo-500/30 bottom-20 left-1/3 animate-float" style="animation-delay: 2.5s;"></div>
+    </div>
     
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h6 class="text-e-cell-blue font-medium mb-2">GET IN TOUCH</h6>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Have Questions?</h2>
-                    <p class="text-gray-400 mb-8">
-                        We're here to help. Reach out to us for any inquiries about events, collaborations, or how to get involved with E-Cell IIT Roorkee.
-                    </p>
+    <!-- Background Animation -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-96 h-96 rounded-full bg-indigo-500 blur-3xl -top-48 -right-48 animate-pulse"></div>
+        <div class="absolute w-96 h-96 rounded-full bg-emerald-400 blur-3xl -bottom-48 -left-48 animate-pulse" style="animation-delay: 1.5s;"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
+            <span class="text-emerald-400 font-medium mb-3 inline-block py-1 px-3 rounded-full bg-emerald-400 bg-opacity-10 tracking-wider text-sm">OUR VALUED PARTNERS</span>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-300 to-indigo-300">Our Sponsors</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                We extend our heartfelt gratitude to our sponsors for their unwavering support and commitment to E-Cell IIT Roorkee.
+            </p>
+        </div>
+
+        <div class="relative p-6 py-16">
+            <!-- Gradient Overlays for Scroll Effect -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            
+
+            <!-- Sponsors Carousel/Grid -->
+            <div class="sponsors-container overflow-hidden" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-12 gap-y-16 items-center justify-items-center">
+                    <!-- Sponsor 1 - TechForge -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-emerald-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-emerald-500/0 to-emerald-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-emerald-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 2a1 1 0 0 1 1 1v3h6V3a1 1 0 1 1 2 0v3h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1zm11 9H5v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7z"/>
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">TechForge</span>
+                        </div>
+                    </div>
+        
+                    <!-- Sponsor 2 - NexaCloud -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-blue-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-blue-500/0 to-blue-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-blue-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.183 2.086A9.98 9.98 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-2.076.63-4.007 1.707-5.61l-.682-.68C1.603 7.119 1 9.489 1 12c0 6.075 4.925 11 11 11s11-4.925 11-11S18.075 1 12 1c-1.051 0-2.072.148-3.037.425l.22.661zM4.707 3.293L3.293 4.707l16 16 1.414-1.414-16-16z" />
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">NexaCloud</span>
+                        </div>
+                    </div>
+        
+                    <!-- Sponsor 3 - Quantum -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-purple-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-purple-500/0 to-purple-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-purple-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">Quantum</span>
+                        </div>
+                    </div>
+        
+                    <!-- Sponsor 4 - Atlas -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-amber-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-amber-500/0 to-amber-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-amber-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.83-3.4 9.19-7 10.3-3.6-1.11-7-5.47-7-10.3V6.3l7-3.12z"/>
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">Atlas</span>
+                        </div>
+                    </div>
+        
+                    <!-- Sponsor 5 - Fusion -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-teal-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-teal-500/0 to-teal-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-teal-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">Fusion</span>
+                        </div>
+                    </div>
+        
+                    <!-- Sponsor 6 - Vertex -->
+                    <div class="sponsor-item group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-rose-400 to-red-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+                        <div class="bg-slate-800/60 backdrop-blur-sm p-6 rounded-2xl relative h-28 w-full flex flex-col items-center justify-center group-hover:shadow-xl group-hover:shadow-rose-500/20 transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-105 border border-slate-700 border-opacity-50 overflow-hidden">
+                            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-tr from-rose-500/0 to-rose-500/10 rounded-full group-hover:opacity-100 opacity-0 transition-all duration-700 group-hover:rotate-180"></div>
+                            <svg class="w-12 h-12 mb-2 text-rose-400 group-hover:text-white transition-all duration-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.32 4.26C16.84 3.05 15.01 2.25 13 2.05v2.02c1.46.18 2.79.76 3.9 1.62l1.42-1.43zM19.93 11h2.02c-.2-2.01-1-3.84-2.21-5.32L18.31 7.1c.86 1.11 1.44 2.44 1.62 3.9zm-1.62 5.9l1.43 1.43c1.21-1.48 2.01-3.32 2.21-5.32h-2.02c-.18 1.45-.76 2.78-1.62 3.89zM13 19.93v2.02c2.01-.2 3.84-1 5.32-2.21l-1.43-1.43c-1.1.86-2.43 1.44-3.89 1.62zm2.59-9.59L13 13l-2.59-2.59L9 12l4 4 4-4-1.41-1.66z"/>
+                            </svg>
+                            <span class="text-xs font-medium text-slate-400 group-hover:text-white transition-all duration-500">Vertex</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        
+        <script>
+        // Add some additional animation effects on mousemove
+        document.addEventListener('DOMContentLoaded', () => {
+            const sponsorItems = document.querySelectorAll('.sponsor-item');
+            
+            // Subtle movement effect on mousemove
+            sponsorItems.forEach(item => {
+                item.addEventListener('mousemove', (e) => {
+                    const rect = item.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gray-800 p-3 rounded-full">
-                                <i class="fas fa-map-marker-alt text-e-cell-blue"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">Address</h5>
-                                <p class="text-gray-400">E-Cell Office, IIT Roorkee, Uttarakhand, India - 247667</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gray-800 p-3 rounded-full">
-                                <i class="fas fa-envelope text-e-cell-blue"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">Email</h5>
-                                <p class="text-gray-400">ecell@iitr.ac.in</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gray-800 p-3 rounded-full">
-                                <i class="fas fa-phone text-e-cell-blue"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">Phone</h5>
-                                <p class="text-gray-400">+91 1234567890</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const moveX = (x - centerX) / centerX * 5; // Max 5px movement
+                    const moveY = (y - centerY) / centerY * 5; // Max 5px movement
+                    
+                    const card = item.querySelector('div:not(.absolute)');
+                    card.style.transform = `translate3d(${moveX}px, ${moveY - 8}px, 0) scale(1.05)`;
+                });
                 
-                <div class="bg-gray-800 rounded-2xl p-8 fade-in">
-                    <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
-                    <form>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <input type="text" placeholder="Your Name" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
-                            </div>
-                            <div>
-                                <input type="email" placeholder="Your Email" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <input type="text" placeholder="Subject" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
-                        </div>
-                        <div class="mb-6">
-                            <textarea placeholder="Your Message" rows="5" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue"></textarea>
-                        </div>
-                        <button type="submit" class="btn-e-cell text-white px-8 py-3 rounded-lg font-medium w-full">
-                            Send Message
-                        </button>
-                    </form>
+                item.addEventListener('mouseleave', () => {
+                    const card = item.querySelector('div:not(.absolute)');
+                    card.style.transform = '';
+                });
+            });
+            
+            // Staggered entrance animation
+            sponsorItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate-fade-in');
+                }, 100 * index);
+            });
+        });
+        </script>
+
+        <!-- Sponsor Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 text-center border border-slate-700 border-opacity-40 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                <div class="text-4xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500">25+</div>
+                <p class="text-gray-400">Industry Partners</p>
+            </div>
+            <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 text-center border border-slate-700 border-opacity-40 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                <div class="text-4xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500">₹10M+</div>
+                <p class="text-gray-400">Funding Secured</p>
+            </div>
+            <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 text-center border border-slate-700 border-opacity-40 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                <div class="text-4xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500">15+</div>
+                <p class="text-gray-400">Events Sponsored</p>
+            </div>
+            <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 text-center border border-slate-700 border-opacity-40 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                <div class="text-4xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500">8+</div>
+                <p class="text-gray-400">Years of Partnership</p>
+            </div>
+        </div>
+
+        <!-- Become a Sponsor Button -->
+        <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="800">
+            <a href="#" class="group inline-flex items-center gap-2 bg-transparent border-2 border-gradient-to-r border-emerald-400 text-emerald-400 font-semibold py-3 px-8 rounded-full hover:bg-gradient-to-r hover:from-emerald-400 hover:to-indigo-500 hover:text-white hover:border-transparent transform hover:-translate-y-1 transition-all duration-300 relative">
+                <span class="absolute inset-0 rounded-full bg-slate-800 -z-10"></span>
+                <span class="relative flex items-center gap-2">
+                    Become a Sponsor
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H3a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Newsletter Section -->
+<section id = "blog" class="py-20 bg-gradient-to-b from-transparent to-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="bg-gray-800 rounded-2xl p-8 md:p-12 relative overflow-hidden fade-in">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="w-64 h-64 rounded-full bg-e-cell-blue opacity-10 absolute -top-20 -right-20 blur-3xl"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Stay Updated with E-Cell</h2>
+                <p class="text-gray-400 mb-8">
+                    Get notified about upcoming events, workshops, and entrepreneurial opportunities tailored for innovators like you.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <input type="email" placeholder="Enter your email" class="bg-gray-700 text-white px-6 py-3 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
+                    <button class="btn-e-cell text-white px-8 py-3 rounded-full font-medium whitespace-nowrap w-full sm:w-auto">
+                        Subscribe
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-                            <path d="M10,10 L20,5 L30,10 L20,15 Z" fill="#1E90FF" />
-                            <path d="M10,10 L10,25 L20,30 L20,15 Z" fill="#1E90FF" opacity="0.8" />
-                            <path d="M30,10 L30,25 L20,30 L20,15 Z" fill="#1E90FF" opacity="0.6" />
-                        </svg>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h6 class="text-e-cell-blue font-medium mb-2">GET IN TOUCH</h6>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Have Questions?</h2>
+                <p class="text-gray-400 mb-8">
+                    We're here to help. Reach out to us for any inquiries about events, collaborations, or how to get involved with E-Cell IIT Roorkee.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gray-800 p-3 rounded-full">
+                            <i class="fas fa-map-marker-alt text-e-cell-blue"></i>
+                        </div>
                         <div>
-                            <div class="text-xl font-bold text-white">E-Cell</div>
-                            <div class="text-xs text-gray-400">IIT ROORKEE</div>
+                            <h5 class="font-medium mb-1">Address</h5>
+                            <p class="text-gray-400">E-Cell Office, IIT Roorkee, Uttarakhand, India - 247667</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-6">
-                        The Entrepreneurship Cell of IIT Roorkee is a student-run organization that aims to foster entrepreneurial spirit among students.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gray-800 p-3 rounded-full">
+                            <i class="fas fa-envelope text-e-cell-blue"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-medium mb-1">Email</h5>
+                            <p class="text-gray-400">ecell@iitr.ac.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gray-800 p-3 rounded-full">
+                            <i class="fas fa-phone text-e-cell-blue"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-medium mb-1">Phone</h5>
+                            <p class="text-gray-400">+91 1234567890</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div>
-                    <h5 class="text-lg font-semibold mb-6">Quick Links</h5>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#events" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Team</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sponsors</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                    </ul>
+            </div>
+            
+            <div class="bg-gray-800 rounded-2xl p-8 fade-in">
+                <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                <form>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" placeholder="Subject" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue">
+                    </div>
+                    <div class="mb-6">
+                        <textarea placeholder="Your Message" rows="5" class="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-e-cell-blue"></textarea>
+                    </div>
+                    <button type="submit" class="btn-e-cell text-white px-8 py-3 rounded-lg font-medium w-full">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="img/ecell.png" alt="E-Cell Logo" class="w-12 h-12">
+                    <div>
+                        <div class="text-xl font-bold text-white">E-Cell</div>
+                        <div class="text-xs text-gray-400">IIT ROORKEE</div>
+                    </div>
                 </div>
-                
-                <div>
-                    <h5 class="text-lg font-semibold mb-6">Initiatives</h5>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-Summit</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Startup Internship Drive</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Entrepreneurship 101</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ideathon</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Startup Showcase</a></li>
-                    </ul>
+                <p class="text-gray-400 mb-6">
+                    The Entrepreneurship Cell of IIT Roorkee is a student-run organization that aims to foster entrepreneurial spirit among students.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="bg-gray-800 text-gray-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
-                
-                <div>
-                    <h5 class="text-lg font-semibold mb-6">Contact</h5>
+            </div>
+            
+            <div>
+                <h5 class="text-lg font-semibold mb-6">Quick Links</h5>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#events" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Team</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sponsors</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="text-lg font-semibold mb-6">Initiatives</h5>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-Summit</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Startup Internship Drive</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Entrepreneurship 101</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ideathon</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Startup Showcase</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="text-lg font-semibold mb-6">Contact</h5>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-e-cell-blue mt-1"></i>
@@ -462,7 +703,7 @@
     </footer>
     
     <script src="script.js">
-       
+        
     </script>
 </body>
 </html>
