@@ -526,3 +526,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.loader').classList.add('hidden');
     }, 800);
 });
+
+
+
