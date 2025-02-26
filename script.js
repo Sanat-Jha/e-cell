@@ -529,3 +529,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+ // Create particles
+ const particlesContainer = document.getElementById('particles');
+ const particleCount = 50;
+ 
+ for (let i = 0; i < particleCount; i++) {
+   createParticle();
+ }
+ 
+ function createParticle() {
+   const particle = document.createElement('div');
+   particle.classList.add('particle');
+   
+   // Random position
+   const x = Math.random() * 100;
+   const y = Math.random() * 100;
+   particle.style.left = `${x}%`;
+   particle.style.top = `${y}%`;
+   
+   // Random opacity and size
+   const size = Math.random() * 2 + 1;
+   const opacity = Math.random() * 0.5 + 0.2;
+   particle.style.width = `${size}px`;
+   particle.style.height = `${size}px`;
+   particle.style.opacity = opacity;
+   
+   particlesContainer.appendChild(particle);
+   
+   // Animate particle
+   animateParticle(particle);
+ }
+ 
+ function animateParticle(particle) {
+   // Random starting values
+   const startX = parseFloat(particle.style.left);
+   const startY = parseFloat(particle.style.top);
+   
+   // Random movement
+   const speedX = (Math.random() - 0.5) * 0.1;
+   const speedY = (Math.random() - 0.5) * 0.1;
+   
+   let x = startX;
+   let y = startY;
+   
+   function move() {
+     x += speedX;
+     y += speedY;
+     
+     // Check boundaries and loop around
+     if (x > 100) x = 0;
+     if (x < 0) x = 100;
+     if (y > 100) y = 0;
+     if (y < 0) y = 100;
+     
+     particle.style.left = `${x}%`;
+     particle.style.top = `${y}%`;
+     
+     requestAnimationFrame(move);
+   }
+   
+   move();
+ }
+ 
+ // Simple parallax effect on mouse move
+ const header = document.querySelector('.header');
+ const circles = document.querySelectorAll('.circle');
+ const glassCard = document.querySelector('.glass-card');
+ 
+ header.addEventListener('mousemove', (e) => {
+   const x = e.clientX / window.innerWidth - 0.5;
+   const y = e.clientY / window.innerHeight - 0.5;
+   
+   // Move circles in opposite direction for parallax
+   circles.forEach((circle, index) => {
+     const speed = (index + 1) * 20;
+     circle.style.transform = `translate(${-x * speed}px, ${-y * speed}px)`;
+   });
+   
+   // Subtle tilt effect on the glass card
+   glassCard.style.transform = `perspective(1000px) rotateX(${y * 5}deg) rotateY(${-x * 5}deg) translateY(-10px)`;
+ });
+ 
+ // Reset transforms when mouse leaves
+ header.addEventListener('mouseleave', () => {
+   circles.forEach((circle) => {
+     circle.style.transform = '';
+   });
+   
+   glassCard.style.transform = 'translateY(-10px)';
+ });

@@ -87,487 +87,253 @@
         </div>
     </div>
 </nav>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600;800&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      
-      background-color: #0a0a0a;
-      color: white;
-      overflow-x: hidden;
-    }
-    
-    .header {
-        font-family: 'Space Grotesk', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0f0f1a, #121220);
-    }
-    
-    .blob-container {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      filter: blur(60px);
-      opacity: 0.7;
-    }
-    
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      mix-blend-mode: screen;
-      transition: transform 0.5s ease-out;
-    }
-    
-    .blob-1 {
-      width: 500px;
-      height: 500px;
-      background: linear-gradient(45deg, #3498ff, #5d36ff);
-      top: -200px;
-      left: -200px;
-      animation: blob-move-1 20s infinite alternate ease-in-out;
-    }
-    
-    .blob-2 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(45deg, #ff3467, #ff367c);
-      bottom: -150px;
-      right: -150px;
-      animation: blob-move-2 25s infinite alternate ease-in-out;
-    }
-    
-    .blob-3 {
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(45deg, #36ffbc, #36d6ff);
-      top: 40%;
-      left: 60%;
-      animation: blob-move-3 18s infinite alternate ease-in-out;
-    }
-    
-    @keyframes blob-move-1 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(100px, 100px) scale(1.2); }
-    }
-    
-    @keyframes blob-move-2 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-100px, -100px) scale(1.3); }
-    }
-    
-    @keyframes blob-move-3 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-150px, 100px) scale(0.8); }
-    }
-    
-    /* .container {
-      position: relative;
-      z-index: 10;
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    } */
-    
-    .content {
-      font-family: 'Unbounded', cursive;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-      padding: 3rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transform-style: preserve-3d;
-      transform: perspective(1000px);
-      transition: all 0.5s ease;
-    }
-    
-    .text-gradient {
-      background: linear-gradient(90deg, #36d1ff, #5b36ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: gradient-shift 8s infinite linear;
-      font-weight: 800;
-    }
-    
-    @keyframes gradient-shift {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-    
+
+  
+  .header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #0a1128, #1a2980);
+    overflow: hidden;
+  }
+  
+  /* Glass card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 3rem;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Background circles */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(60px);
+  }
+  
+  .circle-1 {
+    background: linear-gradient(#4facfe, #00f2fe);
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    animation: float-1 15s infinite alternate ease-in-out;
+  }
+  
+  .circle-2 {
+    background: linear-gradient(#0072ff, #00c6ff);
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+    animation: float-2 18s infinite alternate ease-in-out;
+  }
+  
+  .circle-3 {
+    background: #0061ff;
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 30%;
+    animation: float-3 12s infinite alternate ease-in-out;
+  }
+  
+  @keyframes float-1 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+  }
+  
+  @keyframes float-2 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -30px); }
+  }
+  
+  @keyframes float-3 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-30px, 80px); }
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .highlight {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 114, 255, 0.3);
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Particles */
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+  }
+  
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    z-index: 10;
+  }
+  
+  .scroll-arrow {
+    margin-top: 0.5rem;
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    transform: rotate(-45deg);
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(-45deg); }
+    40% { transform: translateY(-10px) rotate(-45deg); }
+    60% { transform: translateY(-5px) rotate(-45deg); }
+  }
+  
+  @media (max-width: 768px) {
     h1 {
-      font-size: 4rem;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      position: relative;
-      transform-style: preserve-3d;
+      font-size: 2.5rem;
     }
     
     p {
-      font-size: 1.25rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem;
+    }
+    
+    .glass-card {
+      padding: 2rem;
     }
     
     .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-    
-    .btn {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 1rem 2rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      text-align: center;
-      min-width: 180px;
-      transform-style: preserve-3d;
-      transform: translateZ(20px);
-    }
-    
-    .btn-primary {
-      background: linear-gradient(90deg, #3498ff, #5d36ff);
-      color: white;
-      border: none;
-    }
-    
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #5d36ff, #3498ff);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
-    
-    .btn-primary:hover::before {
-      opacity: 1;
-    }
-    
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateZ(30px);
-    }
-    
-    .floating-elements {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 5;
-    }
-    
-    .floating-element {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      mix-blend-mode: overlay;
-    }
-    
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.875rem;
-      z-index: 10;
-      animation: bounce 2s infinite;
     }
-    
-    .scroll-indicator i {
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-10px) translateX(-50%); }
-      60% { transform: translateY(-5px) translateX(-50%); }
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      p {
-        font-size: 1rem;
-      }
-      
-      .content {
-        padding: 2rem;
-      }
-      
-      .buttons {
-        flex-direction: column;
-      }
-      
-      .btn {
-        width: 100%;
-      }
-    }
-    
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: white;
-      mix-blend-mode: screen;
-      pointer-events: none;
-      z-index: 2;
-    }
-    
-    /* Data text animation */
-    .data-text {
-      position: absolute;
-      font-family: 'Space Grotesk', monospace;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.2);
-      z-index: 3;
-      user-select: none;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-  </style>
-  <header class="header">
-    <div class="blob-container">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
+  }
+</style>
+<header class="header">
+  <!-- Background circles -->
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  
+  <!-- Particles container -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Glass card -->
+  <div class="glass-card">
+    <h1>Innovate. <span class="highlight">Create.</span> Inspire.</h1>
+    <p>Explore upcoming entrepreneurial events from E-Cell IIT Roorkee. Join us to connect, learn, and grow with industry leaders and fellow innovators.</p>
+    <div class="buttons">
+      <a href="#events" class="btn btn-primary">Explore Events</a>
+      <a href="#" class="btn btn-secondary">Learn More</a>
     </div>
-    
-    <div class="container">
-      <div class="content">
-        <h1>Innovate. <span class="text-gradient">Create.</span> Inspire.</h1>
-        <p>Explore upcoming entrepreneurial events from E-Cell IIT Roorkee. Join us to connect, learn, and grow with industry leaders and fellow innovators.</p>
-        <div class="buttons">
-          <a href="#events" class="btn btn-primary">Explore Events</a>
-          <a href="#" class="btn btn-secondary">Learn More</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="floating-elements"></div>
-    
-    <div class="scroll-indicator">
-      <span>Scroll Down</span>
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </header>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll Down</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</header>
 
-  <script>
-    // Mouse interaction effects
-    const content = document.querySelector('.content');
-    const blobs = document.querySelectorAll('.blob');
-    const header = document.querySelector('.header');
-    
-    // 3D tilt effect
-    header.addEventListener('mousemove', (e) => {
-      const xVal = e.clientX / window.innerWidth;
-      const yVal = e.clientY / window.innerHeight;
-      
-      const rotateX = 5 - yVal * 10;
-      const rotateY = xVal * 10 - 5;
-      
-      content.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      
-      // Move blobs with mouse
-      blobs.forEach((blob, index) => {
-        const factor = (index + 1) * 15;
-        const x = (xVal - 0.5) * factor;
-        const y = (yVal - 0.5) * factor;
-        blob.style.transform = `translate(${x}px, ${y}px) scale(${1 + (index * 0.1)})`;
-      });
-    });
-    
-    header.addEventListener('mouseleave', () => {
-      content.style.transform = 'perspective(1000px)';
-      blobs.forEach(blob => {
-        blob.style.transform = 'translate(0, 0) scale(1)';
-      });
-    });
-    
-    // Create floating elements
-    const floatingElements = document.querySelector('.floating-elements');
-    const elementCount = 20;
-    
-    for (let i = 0; i < elementCount; i++) {
-      const element = document.createElement('div');
-      element.classList.add('floating-element');
-      
-      const size = Math.random() * 15 + 5;
-      element.style.width = `${size}px`;
-      element.style.height = `${size}px`;
-      
-      const posX = Math.random() * 100;
-      const posY = Math.random() * 100;
-      element.style.left = `${posX}%`;
-      element.style.top = `${posY}%`;
-      
-      const duration = Math.random() * 60 + 30;
-      const delay = Math.random() * 10;
-      
-      element.style.animation = `floating ${duration}s ${delay}s infinite alternate ease-in-out`;
-      element.style.opacity = Math.random() * 0.3 + 0.1;
-      
-      floatingElements.appendChild(element);
-    }
-    
-    // Add particle effect on mousemove
-    header.addEventListener('mousemove', createParticle);
-    
-    function createParticle(e) {
-      if (Math.random() > 0.9) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        const size = Math.random() * 4 + 2;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        
-        particle.style.left = `${e.clientX}px`;
-        particle.style.top = `${e.clientY}px`;
-        
-        particle.style.opacity = Math.random() * 0.5 + 0.2;
-        
-        header.appendChild(particle);
-        
-        const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 3 + 1;
-        const vx = Math.cos(angle) * speed;
-        const vy = Math.sin(angle) * speed;
-        
-        let timeAlive = 0;
-        const maxTime = Math.random() * 1000 + 500;
-        
-        const update = () => {
-          timeAlive += 16;
-          
-          if (timeAlive > maxTime) {
-            particle.remove();
-            return;
-          }
-          
-          const x = parseInt(particle.style.left);
-          const y = parseInt(particle.style.top);
-          
-          particle.style.left = `${x + vx}px`;
-          particle.style.top = `${y + vy}px`;
-          particle.style.opacity = 1 - (timeAlive / maxTime);
-          
-          requestAnimationFrame(update);
-        };
-        
-        requestAnimationFrame(update);
-      }
-    }
-    
-    // Add data text animation (cyberpunk effect)
-    const dataTexts = [
-      'INNOVATE', 'CREATE', 'DISRUPT', 'LAUNCH', 'SCALE', 'DEVELOP',
-      'ECELL', 'STARTUP', 'VENTURE', 'PRODUCT', 'MARKET', 'PITCH'
-    ];
-    
-    function createDataText() {
-      const dataText = document.createElement('div');
-      dataText.classList.add('data-text');
-      
-      const text = dataTexts[Math.floor(Math.random() * dataTexts.length)];
-      dataText.textContent = text;
-      
-      const posX = Math.random() * window.innerWidth;
-      const posY = Math.random() * window.innerHeight;
-      dataText.style.left = `${posX}px`;
-      dataText.style.top = `${posY}px`;
-      
-      header.appendChild(dataText);
-      
-      const direction = Math.random() > 0.5 ? 1 : -1;
-      const speed = Math.random() * 2 + 0.5;
-      
-      let distance = 0;
-      const maxDistance = Math.random() * 200 + 100;
-      
-      const update = () => {
-        distance += speed;
-        
-        if (distance > maxDistance) {
-          dataText.remove();
-          setTimeout(createDataText, Math.random() * 1000);
-          return;
-        }
-        
-        const x = parseInt(dataText.style.left);
-        dataText.style.left = `${x + (direction * speed)}px`;
-        dataText.style.opacity = 1 - (distance / maxDistance);
-        
-        requestAnimationFrame(update);
-      };
-      
-      requestAnimationFrame(update);
-    }
-    
-    // Start data text animations
-    for (let i = 0; i < 5; i++) {
-      setTimeout(createDataText, i * 500);
-    }
-    
-    // Add style for floating animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes floating {
-        0% { transform: translate(0, 0) rotate(0deg); }
-        50% { transform: translate(20px, 20px) rotate(180deg); }
-        100% { transform: translate(-20px, -10px) rotate(360deg); }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>    <section id="events" class="py-24 relative overflow-hidden">
+
+  <section id="events" class="py-24 relative overflow-hidden">
         <!-- Background elements -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-e-cell-blue opacity-10 rounded-full blur-3xl -mr-20 -mt-20"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 opacity-10 rounded-full blur-3xl -ml-20 -mb-20"></div>
